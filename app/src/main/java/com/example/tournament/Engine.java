@@ -27,7 +27,7 @@ public class Engine {
 
     public void process() {
         this.teams = new ArrayList<>();
-        this.currentMatches = new ArrayList<List<List<String>>>();
+        this.currentMatches = new ArrayList<>();
         this.createTeammates();
         this.createMatchups();
         this.updateDataset();

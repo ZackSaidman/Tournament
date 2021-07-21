@@ -16,7 +16,7 @@ import com.example.tournament.databinding.FragmentFirstBinding;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
-    private TournamentUI TUI = new TournamentUI();
+    private TournamentUI TUI;
 
     @Override
     public View onCreateView(
@@ -25,6 +25,10 @@ public class FirstFragment extends Fragment {
     ) {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
+
+        MainActivity activity = (MainActivity) getActivity();
+        TUI = activity.getMyData();
+
         return binding.getRoot();
 
     }
@@ -53,6 +57,7 @@ public class FirstFragment extends Fragment {
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                TUI.init();
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }

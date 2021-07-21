@@ -5,10 +5,14 @@ import java.util.List;
 
 public class TournamentUI {
     Engine tournament = new Engine();
-    List<String> startingPlayers;
-    int courts;
 
-//    public TournamentUI()
+    public void generate() {
+        tournament.process();
+    }
+
+    public void init() {
+        tournament.initPlayers();
+    }
 
     public void startPlayers(String returnValue) {
         try {
@@ -34,12 +38,4 @@ public class TournamentUI {
         }
     }
 
-//    def startCourts(self):
-//    returnValue = self.courts.get()
-//            try:
-//    returnValue = int(returnValue)
-//    print(returnValue)
-//            self.tournament.setCourts(returnValue)
-//    except:
-//    print("format unrecognized")
 }
