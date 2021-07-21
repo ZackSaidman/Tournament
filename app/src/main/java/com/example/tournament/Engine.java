@@ -167,7 +167,7 @@ public class Engine {
         boolean duplicateOccurred = false;
         for (int i=0; i < newPlayers.size(); i++) {
             String player = newPlayers.get(i);
-            if (this.players.contains(player)) {
+            if (this.matchesMadeTeammate.containsKey(player)) {
                 System.out.println(player + " already in the game. Please re-enter with new name");
                 duplicateOccurred = true;
             }
@@ -211,6 +211,36 @@ public class Engine {
         }
         else {
             System.out.println("Players removed");
+        }
+    }
+
+    public void returningPlayers(List<String> returningPlayers) {
+        boolean duplicateOccurred = false;
+        for (int i=0; i < returningPlayers.size(); i++) {
+            String player = returningPlayers.get(i);
+            if (this.players.contains(player)) {
+                System.out.println(player + " already in the game. Please re-enter with new name");
+                duplicateOccurred = true;
+            }
+            else {
+                this.players.add(player);
+                if (!this.matchesMadeTeammate.containsKey(player)) {
+                    this.matchesMadeTeammate.put(player, new ArrayList<String>());
+                }
+                if (!this.matchesMadeOpponent.containsKey(player)) {
+                    this.matchesMadeOpponent.put(player, new ArrayList<String>());
+                }
+                if (!this.playerGamesPlayed.containsKey(player)) {
+                    this.playerGamesPlayed.put(player, 0);
+                }
+            }
+        }
+
+        if (duplicateOccurred) {
+            System.out.println("All other names re-admitted to the game.");
+        }
+        else {
+            System.out.println("Players Re-Admitted");
         }
     }
 

@@ -36,6 +36,20 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        binding.startingPlayers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.startingPlayers.setText("");
+            }
+        });
+
+        binding.numberOfCourts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.numberOfCourts.setText("");
+            }
+        });
+
         binding.submitPlayers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

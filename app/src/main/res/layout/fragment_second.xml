@@ -7,28 +7,6 @@
     tools:context=".SecondFragment">
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="80dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="28dp"
-        android:background="#000000"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/player13"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="80dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="28dp"
-        android:background="#000000"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/player9"></LinearLayout>
-
-    <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="80dp"
         android:layout_height="2dp"
@@ -39,106 +17,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/player5"></LinearLayout>
-
-    <TextView
-        android:id="@+id/player13"
-        android:layout_width="115dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="45dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player10" />
-
-    <TextView
-        android:id="@+id/player11"
-        android:layout_width="115dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player8" />
-
-    <TextView
-        android:id="@+id/player15"
-        android:layout_width="115dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player12" />
-
-    <TextView
-        android:id="@+id/player12"
-        android:layout_width="115dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player11" />
-
-    <TextView
-        android:id="@+id/player10"
-        android:layout_width="115dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player9" />
-
-    <TextView
-        android:id="@+id/player9"
-        android:layout_width="115dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="45dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player6" />
-
-    <TextView
-        android:id="@+id/player16"
-        android:layout_width="115dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player15" />
-
-    <TextView
-        android:id="@+id/player14"
-        android:layout_width="115dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player13" />
 
     <TextView
         android:id="@+id/player5"
@@ -157,14 +35,13 @@
         android:id="@+id/player3"
         android:layout_width="115dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:gravity="center"
         android:text="TextView"
         android:textSize="24sp"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/player1" />
 
     <TextView
         android:id="@+id/player7"
@@ -209,10 +86,10 @@
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
         android:text="TextView"
         android:textSize="24sp"
-        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -244,6 +121,7 @@
         android:id="@+id/button_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:text="Generate Matchup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -262,9 +140,79 @@
         app:layout_constraintTop_toTopOf="@+id/player1"></LinearLayout>
 
     <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
         android:layout_width="2dp"
         android:layout_height="2dp"
         tools:layout_editor_absoluteX="188dp"
         tools:layout_editor_absoluteY="422dp" />
+
+    <EditText
+        android:id="@+id/addPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Add Players"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player6" />
+
+    <Button
+        android:id="@+id/returningPlayersButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/returningPlayers" />
+
+    <Button
+        android:id="@+id/removePlayersButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/removePlayers" />
+
+    <EditText
+        android:id="@+id/returningPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Re-Admit Players"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/removePlayers" />
+
+    <Button
+        android:id="@+id/addPlayersButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/addPlayers" />
+
+    <EditText
+        android:id="@+id/removePlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Remove Players"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addPlayers" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,4 +38,40 @@ public class TournamentUI {
         }
     }
 
+    public void addPlayers(String returnValue) {
+        try {
+            returnValue = returnValue.replace(" ", "");
+            List<String> listValue = Arrays.asList(returnValue.split(","));
+            this.tournament.addPlayers(listValue);
+            System.out.println("Players added");
+        }
+        catch (Exception ee) {
+            System.out.println("format unrecognized");
+        }
+    }
+
+    public void removePlayers(String returnValue) {
+        try {
+            returnValue = returnValue.replace(" ", "");
+            List<String> listValue = Arrays.asList(returnValue.split(","));
+            this.tournament.removePlayers(listValue);
+            System.out.println("Players removed");
+        }
+        catch (Exception ee) {
+            System.out.println("format unrecognized");
+        }
+    }
+
+    public void returningPlayers(String returnValue) {
+        try {
+            returnValue = returnValue.replace(" ", "");
+            List<String> listValue = Arrays.asList(returnValue.split(","));
+            this.tournament.returningPlayers(listValue);
+            System.out.println("Players re-admitted");
+        }
+        catch (Exception ee) {
+            System.out.println("format unrecognized");
+        }
+    }
+
 }
