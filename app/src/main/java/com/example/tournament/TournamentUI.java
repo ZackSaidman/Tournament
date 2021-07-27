@@ -1,5 +1,6 @@
 package com.example.tournament;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class TournamentUI {
         try {
             returnValue = returnValue.replace(" ", "");
             List<String> listValue = Arrays.asList(returnValue.split(","));
-            this.tournament.setPlayers(listValue);
+            this.tournament.addPlayers(listValue);
             System.out.println("Players set");
         }
         catch (Exception ee) {
@@ -72,6 +73,43 @@ public class TournamentUI {
         catch (Exception ee) {
             System.out.println("format unrecognized");
         }
+    }
+
+    public boolean newWinners(String winners) {
+        try {
+            winners = winners.replace(" ", "");
+            List<String> winnersList = Arrays.asList(winners.split(","));
+
+            if (winnersList.contains("None")) {
+                return false;
+            }
+
+            if (((double) winnersList.size() / (double) 2) == (double) tournament.courtsInUse) {
+                tournament.updateScore(winnersList);
+                return true;
+            }
+            else {
+                System.out.println("Submit all scores");
+            }
+        }
+        catch (Exception ee) {
+            System.out.println("format unrecognized");
+        }
+
+        return false;
+    }
+
+    public List<String> getScores() {
+        List<String> score = new ArrayList<>();
+
+        for (String player : this.tournament.scores.keySet()) {
+            int wins = this.tournament.scores.get(player);
+            int totalGames = this.tournament.playerGamesPlayed.get(player);
+            int losses = totalGames - wins;
+            score.add(player + " - W:" + wins + " L:" + losses);
+        }
+        return score;
+
     }
 
 }

@@ -15,11 +15,13 @@ public class Engine {
     // inputs
     List<String> players = new ArrayList<>();
     int numOfCourts;
+    int courtsInUse;
 
     // holder data (sql?)
     HashMap<String, List<String>> matchesMadeTeammate = new HashMap<>();
     HashMap<String, List<String>> matchesMadeOpponent = new HashMap<>();
     HashMap<String, Integer> playerGamesPlayed = new HashMap<>();
+    HashMap<String, Integer> scores = new HashMap<>();
 
     // output
     List<List<String>> teams;
@@ -118,6 +120,7 @@ public class Engine {
     }
 
     public void updateDataset() {
+        this.courtsInUse = this.currentMatches.size();
         for (int i=0; i < this.currentMatches.size(); i++) {
             List<List<String>> match = this.currentMatches.get(i);
             for (int j=0; j < match.size(); j++) {
@@ -140,6 +143,15 @@ public class Engine {
     }
 
 
+    public void updateScore(List<String> winners) {
+        for (int i=0; i < winners.size(); i++) {
+            String player = winners.get(i);
+            int oldValue = this.scores.get(player);
+            this.scores.put(player, oldValue + 1);
+        }
+    }
+
+
     public void initPlayers() {
         if (this.players.size() == 0) {
             System.out.println("Please add players");
@@ -158,6 +170,7 @@ public class Engine {
             this.matchesMadeTeammate.put(player, new ArrayList<String>());
             this.matchesMadeOpponent.put(player, new ArrayList<String>());
             this.playerGamesPlayed.put(player, 0);
+            this.scores.put(player, 0);
         }
 
         System.out.println("Game initialized");
@@ -181,6 +194,9 @@ public class Engine {
                 }
                 if (!this.playerGamesPlayed.containsKey(player)) {
                     this.playerGamesPlayed.put(player, 0);
+                }
+                if (!this.scores.containsKey(player)) {
+                    this.scores.put(player, 0);
                 }
             }
         }
@@ -269,12 +285,12 @@ public class Engine {
         return temp;
     }
 
-    public void setPlayers(List<String> newPlayers) {
-        this.players.addAll(newPlayers);
-    }
 
     public void setCourts(int courts) {
-        this.numOfCourts = courts;
+        this.numOfCourts = Math.min(courts, 2);
+        if (courts > 2) {
+            System.out.println("Courts set to 2");
+        }
     }
 
 }

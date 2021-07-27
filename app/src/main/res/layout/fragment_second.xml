@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="80dp"
+        android:layout_width="50dp"
         android:layout_height="2dp"
         android:layout_marginTop="32dp"
         android:background="#000000"
@@ -22,23 +22,21 @@
         android:id="@+id/player5"
         android:layout_width="115dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginTop="45dp"
-        android:text="TextView"
-        android:textSize="24sp"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="None"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/player2"
         app:layout_constraintTop_toBottomOf="@+id/player2" />
 
     <TextView
         android:id="@+id/player3"
         android:layout_width="115dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="None"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/player1" />
@@ -48,47 +46,41 @@
         android:layout_width="115dp"
         android:layout_height="0dp"
         android:layout_marginTop="45dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="TextView"
-        android:textSize="24sp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="None"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/player4"
         app:layout_constraintTop_toBottomOf="@+id/player4" />
 
     <TextView
         android:id="@+id/player4"
         android:layout_width="115dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="TextView"
-        android:textSize="24sp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="None"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/player3"
         app:layout_constraintTop_toBottomOf="@+id/player3" />
 
     <TextView
         android:id="@+id/player2"
         android:layout_width="115dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:text="TextView"
-        android:textSize="24sp"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="None"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/player1"
         app:layout_constraintTop_toBottomOf="@+id/player1" />
 
     <TextView
         android:id="@+id/player1"
         android:layout_width="115dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
         android:layout_marginTop="32dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="None"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -97,24 +89,20 @@
         android:id="@+id/player8"
         android:layout_width="115dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="TextView"
-        android:textSize="24sp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="None"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/player7"
         app:layout_constraintTop_toBottomOf="@+id/player7" />
 
     <TextView
         android:id="@+id/player6"
         android:layout_width="115dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:text="TextView"
-        android:textSize="24sp"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="None"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/player5"
         app:layout_constraintTop_toBottomOf="@+id/player5" />
 
     <Button
@@ -129,7 +117,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="80dp"
+        android:layout_width="50dp"
         android:layout_height="2dp"
         android:layout_marginTop="32dp"
         android:background="#000000"
@@ -214,5 +202,71 @@
         android:text="Remove Players"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addPlayers" />
+
+    <Button
+        android:id="@+id/win1"
+        android:layout_width="62dp"
+        android:layout_height="66dp"
+        android:text="Win"
+        app:layout_constraintEnd_toStartOf="@+id/player1"
+        app:layout_constraintTop_toTopOf="@+id/player1" />
+
+    <Button
+        android:id="@+id/win4"
+        android:layout_width="62dp"
+        android:layout_height="66dp"
+        android:text="Win"
+        app:layout_constraintStart_toEndOf="@+id/player7"
+        app:layout_constraintTop_toTopOf="@+id/player7" />
+
+    <Button
+        android:id="@+id/win3"
+        android:layout_width="62dp"
+        android:layout_height="66dp"
+        android:text="Win"
+        app:layout_constraintEnd_toStartOf="@+id/player5"
+        app:layout_constraintTop_toTopOf="@+id/player5" />
+
+    <Button
+        android:id="@+id/win2"
+        android:layout_width="62dp"
+        android:layout_height="66dp"
+        android:text="Win"
+        app:layout_constraintStart_toEndOf="@+id/player3"
+        app:layout_constraintTop_toTopOf="@+id/player3" />
+
+    <TextView
+        android:id="@+id/winText"
+        android:layout_width="106dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="48dp"
+        android:text="Winners:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/returningPlayers" />
+
+    <TextView
+        android:id="@+id/winTextOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="6dp"
+        android:text="None"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/winText" />
+
+    <Button
+        android:id="@+id/scoreboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="View Scoreboard"
+        app:layout_constraintBottom_toBottomOf="@+id/winText"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
