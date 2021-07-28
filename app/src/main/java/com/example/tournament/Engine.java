@@ -21,7 +21,8 @@ public class Engine {
     HashMap<String, List<String>> matchesMadeTeammate = new HashMap<>();
     HashMap<String, List<String>> matchesMadeOpponent = new HashMap<>();
     HashMap<String, Integer> playerGamesPlayed = new HashMap<>();
-    HashMap<String, Integer> scores = new HashMap<>();
+    HashMap<String, Integer> wins = new HashMap<>();
+    HashMap<String, Integer> losses = new HashMap<>();
 
     // output
     List<List<String>> teams;
@@ -146,8 +147,22 @@ public class Engine {
     public void updateScore(List<String> winners) {
         for (int i=0; i < winners.size(); i++) {
             String player = winners.get(i);
-            int oldValue = this.scores.get(player);
-            this.scores.put(player, oldValue + 1);
+            int oldWins = this.wins.get(player);
+            this.wins.put(player, oldWins + 1);
+        }
+
+        for (int i=0; i < this.currentMatches.size(); i++) {
+            List<List<String>> match = this.currentMatches.get(i);
+            for (int j = 0; j < match.size(); j++) {
+                List<String> team = match.get(j);
+                for (int k = 0; k < team.size(); k++) {
+                    String player = team.get(k);
+                    if (!winners.contains(player)) {
+                        int oldLosses = this.losses.get(player);
+                        this.losses.put(player, oldLosses + 1);
+                    }
+                }
+            }
         }
     }
 
@@ -167,10 +182,7 @@ public class Engine {
 
         for (int i=0; i < this.players.size(); i++) {
             String player = this.players.get(i);
-            this.matchesMadeTeammate.put(player, new ArrayList<String>());
-            this.matchesMadeOpponent.put(player, new ArrayList<String>());
-            this.playerGamesPlayed.put(player, 0);
-            this.scores.put(player, 0);
+            initNewPlayer(player);
         }
 
         System.out.println("Game initialized");
@@ -185,19 +197,7 @@ public class Engine {
                 duplicateOccurred = true;
             }
             else {
-                this.players.add(player);
-                if (!this.matchesMadeTeammate.containsKey(player)) {
-                    this.matchesMadeTeammate.put(player, new ArrayList<String>());
-                }
-                if (!this.matchesMadeOpponent.containsKey(player)) {
-                    this.matchesMadeOpponent.put(player, new ArrayList<String>());
-                }
-                if (!this.playerGamesPlayed.containsKey(player)) {
-                    this.playerGamesPlayed.put(player, 0);
-                }
-                if (!this.scores.containsKey(player)) {
-                    this.scores.put(player, 0);
-                }
+                initNewPlayer(player);
             }
         }
 
@@ -239,16 +239,7 @@ public class Engine {
                 duplicateOccurred = true;
             }
             else {
-                this.players.add(player);
-                if (!this.matchesMadeTeammate.containsKey(player)) {
-                    this.matchesMadeTeammate.put(player, new ArrayList<String>());
-                }
-                if (!this.matchesMadeOpponent.containsKey(player)) {
-                    this.matchesMadeOpponent.put(player, new ArrayList<String>());
-                }
-                if (!this.playerGamesPlayed.containsKey(player)) {
-                    this.playerGamesPlayed.put(player, 0);
-                }
+                initNewPlayer(player);
             }
         }
 
@@ -290,6 +281,27 @@ public class Engine {
         this.numOfCourts = Math.min(courts, 2);
         if (courts > 2) {
             System.out.println("Courts set to 2");
+        }
+    }
+
+    public void initNewPlayer(String player) {
+        if (!this.players.contains(player)) {
+            this.players.add(player);
+        }
+        if (!this.matchesMadeTeammate.containsKey(player)) {
+            this.matchesMadeTeammate.put(player, new ArrayList<String>());
+        }
+        if (!this.matchesMadeOpponent.containsKey(player)) {
+            this.matchesMadeOpponent.put(player, new ArrayList<String>());
+        }
+        if (!this.playerGamesPlayed.containsKey(player)) {
+            this.playerGamesPlayed.put(player, 0);
+        }
+        if (!this.wins.containsKey(player)) {
+            this.wins.put(player, 0);
+        }
+        if (!this.losses.containsKey(player)) {
+            this.losses.put(player, 0);
         }
     }
 

@@ -10,14 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tournament.databinding.FragmentThirdBinding;
+import com.example.tournament.databinding.FragmentFourthBinding;
 
 import java.util.List;
 
 
-public class ThirdFragment extends Fragment {
+public class FourthFragment extends Fragment {
 
-    private FragmentThirdBinding binding;
+    private FragmentFourthBinding binding;
     private TournamentUI TUI;
     private List<String> scores;
 
@@ -28,7 +28,7 @@ public class ThirdFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentThirdBinding.inflate(inflater, container, false);
+        binding = FragmentFourthBinding.inflate(inflater, container, false);
 
         MainActivity activity = (MainActivity) getActivity();
         TUI = activity.getMyData();
@@ -46,17 +46,8 @@ public class ThirdFragment extends Fragment {
         binding.backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_thirdFragment_to_SecondFragment);
-
-            }
-        });
-
-        binding.forwardButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_thirdFragment_to_fourthFragment);
+                NavHostFragment.findNavController(FourthFragment.this)
+                        .navigate(R.id.action_fourthFragment_to_thirdFragment);
 
             }
         });
@@ -65,55 +56,55 @@ public class ThirdFragment extends Fragment {
     public void outputScores() {
         int value;
 
-        value = 1;
+        value = 14;
         if (scores.size() >= value) {
             binding.score1.setText(scores.get(value - 1));
         }
-        value = 2;
+        value = 15;
         if (scores.size() >= value) {
             binding.score2.setText(scores.get(value - 1));
         }
-        value = 3;
+        value = 16;
         if (scores.size() >= value) {
             binding.score3.setText(scores.get(value - 1));
         }
-        value = 4;
+        value = 17;
         if (scores.size() >= value) {
             binding.score4.setText(scores.get(value - 1));
         }
-        value = 5;
+        value = 18;
         if (scores.size() >= value) {
             binding.score5.setText(scores.get(value - 1));
         }
-        value = 6;
+        value = 19;
         if (scores.size() >= value) {
             binding.score6.setText(scores.get(value - 1));
         }
-        value = 7;
+        value = 20;
         if (scores.size() >= value) {
             binding.score7.setText(scores.get(value - 1));
         }
-        value = 8;
+        value = 21;
         if (scores.size() >= value) {
             binding.score8.setText(scores.get(value - 1));
         }
-        value = 9;
+        value = 22;
         if (scores.size() >= value) {
             binding.score9.setText(scores.get(value - 1));
         }
-        value = 10;
+        value = 23;
         if (scores.size() >= value) {
             binding.score10.setText(scores.get(value - 1));
         }
-        value = 11;
+        value = 24;
         if (scores.size() >= value) {
             binding.score11.setText(scores.get(value - 1));
         }
-        value = 12;
+        value = 25;
         if (scores.size() >= value) {
             binding.score12.setText(scores.get(value - 1));
         }
-        value = 13;
+        value = 26;
         if (scores.size() >= value) {
             binding.score13.setText(scores.get(value - 1));
         }

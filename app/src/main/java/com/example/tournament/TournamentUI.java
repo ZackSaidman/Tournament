@@ -102,10 +102,10 @@ public class TournamentUI {
     public List<String> getScores() {
         List<String> score = new ArrayList<>();
 
-        for (String player : this.tournament.scores.keySet()) {
-            int wins = this.tournament.scores.get(player);
-            int totalGames = this.tournament.playerGamesPlayed.get(player);
-            int losses = totalGames - wins;
+        for (String player : this.tournament.wins.keySet()) {
+            int wins = this.tournament.wins.get(player);
+            int losses = this.tournament.losses.get(player);
+
             score.add(player + " - W:" + wins + " L:" + losses);
         }
         return score;
